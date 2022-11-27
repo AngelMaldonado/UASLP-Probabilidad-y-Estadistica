@@ -1,0 +1,649 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{url, hyperref}
+
+\setlength{\parindent}{0pt}
+
+\title{\vspace{-3cm}Tarea de investigación: Estadística Inferencial}
+\author{
+    Universidad Autónoma de San Luis Potosí\\
+    Facultad de Ingeniería - Ing. En Sistemas Inteligentes\\
+    \textbf{Materia:} Probabilidad y Estadística\\
+    \textbf{Prof:} MATI Jaime Federico Meade Collins\\
+    \textbf{Alumno:} Angel de Jesús Maldonado Juárez\\
+}
+\date{\textbf{Fecha de entrega:} martes 22 de noviembre de 2022}
+
+\begin{document}
+\maketitle
+
+\hrule
+
+\section{¿Qué es la Estadística Inferencial?}
+Si la \emph{Estadística Descriptiva} es la rama que se encarga de \emph{describir} el comportamiento y/o características de un conjunto de datos en donde solamente existe un grupo, entonces, la \emph{Estadística Inferencial} se enfoca en \emph{predecir}, \emph{generalizar}, o \emph{estimar} el comportamiento y/o características de un conjunto de datos. Generalmente, la estadística inferencial se utiliza cuando en el caso de estudio se involucran dos o más grupos en el conjunto de datos, y en la inferencia estadística se utilizan principalmente los valores, o parámetros, que toman cada observación del conjunto de datos para utilizar o crear fórmulas que, utilizando los parámetros conocidos o desconocidos de las observaciones, ayuden a crear conclusiones, predicciones, o generalizaciones. Estas fórmulas también son llamadas \emph{estimadores}, estos deben ser de varianza mínima, y hay distintas formas de crearlos.
+
+\section{Conceptos Clave}
+\subsection{Estimación Puntual}
+Es cuando un estimador utiliza solamente un valor o parámetro, o se quiere aproximar un parámetro desconocido (altura media, porción de población, etc.) del conjunto de datos se le denomina un estimador, o estimación, de tipo puntual.
+
+\subsection{Intervalo de Confianza}
+El \emph{Intervalo de Confianza} se refiere a un rango de valores entre los cuales se encuentra la estimación o predicción de un parámetro en estudio de estadística inferencial con una variabilidad entre la medida obtenida (estimada) y la medida real del estudio. Un comportamiento importante del intervalo de confianza es que, mientras más observaciones se tengan en un estudio, menor será la amplitud del intervalo y las estimaciones serán más precisas, y mientras menor sean el número de estimaciones el intervalo será más amplio y, por consecuencia, las estimaciones menos precisas. La fórmula general para calcular el intervalo de confianza es la siguiente:
+
+\begin{equation}
+    IC=\overline{x}\pm z\frac{s}{\sqrt{n}}
+\end{equation}
+
+Donde, $IC$ es el intervalo de confianza, $\overline{x}$ es la media, $z$ es el nivel de confianza, $s$ es la desviación estándar, y $n$ es el tamaño de la muestra.
+
+\subsection{Tamaño de la muestra}
+En un estudio estadístico, generalmente se requiere delimitar la cantidad de elementos que se quieren estudiar con base en las características o aspectos que estos mismos tienen. El objetivo principal es lograr una estimación acertada con un tamaño de muestra $n$, sin tener que involucrar a toda la población en el estudio.
+
+\subsection{Proporción muestral y proporción poblacional}
+La población se refiere al total de unidades o elementos del conjunto que se va a estudiar en un análisis estadístico, por lo tanto, una \emph{proporción poblacional} se refiere al cien por ciento de los elementos. Mientras que una \emph{proporción muestral} es solamente un subconjunto, o fracción, muy representativa de la proporción poblacional, y la elección de individuos o elementos para una muestra debe ser muy específica y precisa para lograr obtener los mejores resultados.
+
+\subsection{Valor crítico}
+El \emph{Valor Crítico} en un estudio estadístico se refiere a un punto, o par de puntos, del cual parten un conjunto de valores en los cuales la hipótesis planteada en el estudio tienen un valor nulo, o que no cumplen con la misma. A este conjunto de valores también se le llama \emph{región crítica} o de \emph{rechazo}.
+
+Para encontrar el valor crítico en una distribución normal se debe tener el \emph{nivel de confianza} (probabilidad de que el intervalo de confianza tenga el valor real de la variable estadística $1 - \alpha$) y el \emph{nivel de significación o de riesgo} (probabilidad de que el intervalo de confianza no tenga el valor de la variable estadística $\alpha$). Teniendo ambos valores, se puede encontrar el valor crítico en la tabla de la normal $N(0,1)$ que indica que grado de certeza hay en el intervalo de confianza con la fórmula:
+
+\begin{equation}
+    P(Z\leq Z_{\alpha/2})=\frac{1+(1-\alpha)}{2}
+\end{equation}
+
+\subsection{Hipótesis nula}
+Cuando se inicia un trabajo de investigación estadística se establece una pregunta y respuesta inicial, esta última se le llama hipótesis, y durante el transcurso de la investigación y la obtención de observaciones, se pretende que las conclusiones lleven a una confirmación positiva de la hipótesis inicial, es decir, que sea verdadera la hipótesis. Sin embargo, pueden existir observaciones en las que la hipótesis sea falsa, o el resultado sea opuesto a lo establecido, en tales casos se dice que la hipótesis es nula.
+
+\subsection{Hipótesis alternativa}
+Cuando existen observaciones en un estudio estadístico en los que no se cumple la hipótesis inicial (hipótesis nula), pero se reconoce una repetición de esta misma, se puede establecer una \emph{hipótesis alternativa}, la cual se va a cumplir en caso de que la hipótesis inicial sea falsa en algunas de las observaciones, cubriendo así la mayoría de los casos en un estudio estadístico.
+
+\subsection{Errores de Tipo 1 y Tipo 2}
+Siempre existe la posibilidad de que la prueba de hipótesis en un estudio estadístico tenga un margen de error, y existen los errores de \emph{Tipo 1} y \emph{Tipo 2}. El primero ocurre cuando la \emph{hipótesis nula} es \textbf{rechazada} cuando es \textbf{verdadera}, y la probabilidad de que esto suceda es $\alpha$ (nivel de significancia), y mientras $\alpha$ sea más pequeño es menos probable de detectar diferencias si estas existen. El erro de tipo 2 ocurre cuando la \emph{hipótesis nula} es \textbf{falsa} y \textbf{no se rechaza}, y la probabilidad de que se cometa este error es $\beta$ (potencia de la prueba), y para reducir este tipo de error es necesario tener un tamaño de muestra lo suficientemente grande para que la potencia de prueba aumente.
+
+\subsection{Nivel de significancia}
+El \emph{Nivel de Significancia} $\alpha$ es la probabilidad de \textbf{rechazar} la \emph{hipótesis nula} cuando esta es \textbf{verdadera}. La importancia de este valor radica en que se está estableciendo qué tanta importancia se le da a los casos en los que existe una diferencia de los resultados de las observaciones con la hipótesis inicial.
+
+\section{Cuestionario Práctico}
+\subsection{¿Cómo se determina e interpreta la media poblacional con \(\sigma\) conocida?}
+Para poder determinar la \emph{media poblacional} se deben cumplir con los siguientes tres requisitos:
+
+\begin{enumerate}
+    \item La muestra es aleatoria simple (cada una de las muestras tiene la misma probabilidad de ser elegida).
+    \item Se conoce el valor de la desviación estándar poblacional $\sigma$.
+    \item Se satisface una o ambas de las siguientes condiciones: la población se distribuye normalmente o $n>30$.
+\end{enumerate}
+
+Cumpliendo estas condiciones, entonces el valor de $z$ puede ser calculado como:
+
+\begin{equation}
+    z=\frac{\overline{x}-\mu_{\overline{x}}}{\sigma/\sqrt{n}}
+\end{equation}
+
+Donde $z$ indica la diferencia entre un valor de la variable y el promedio (valor crítico), expresada en cantidad de desviaciones estándar, $\overline{x}$ es la media muestral, $\mu_{\overline{x}}$ es la media poblacional, $\sigma$ es la desviación estándar, y $n$ es el tamaño muestral.
+
+Utilizando el \emph{método tradicional} para la prueba de hipótesis con $\sigma$ conocida, la \emph{hipótesis nula} $H_0$ se rechaza si se encuentra \textbf{dentro} de la región crítica, y se acepta $H_0$ si \textbf{no está dentro} de la región crítica.
+
+\subsection{¿Cómo se determina e interpreta la media poblacional con $\sigma$ desconocida?}
+Para poder determinar la \emph{media poblacional} se deben cumplir con los siguientes tres requisitos:
+
+\begin{enumerate}
+    \item La muestra aleatoria es simple.
+    \item Se \emph{desconoce} el valor de la desviación estándar poblacional $\sigma$.
+    \item Se satisfacen una o ambas de las siguientes condiciones: la población se distribuye de manera normal o $n>30$.
+\end{enumerate}
+
+Cumpliendo estas condiciones, el estadístico de prueba $t$ se puede calcular de la siguiente forma:
+
+\begin{equation}
+    t=\frac{\overline{x}-\mu_{\overline{x}}}{s/\sqrt{n}}
+\end{equation}
+
+Donde $t$ representa otro tipo de distribución llamado \emph{Student}, $\overline{x}$ es la media muestral, $\mu_{\overline{x}}$ es la media poblacional, $s$ es la desviación estándar, y $n$ el tamaño de la población.
+
+\subsection{¿Cuándo se usa la distribución normal para construir una estimación de confianza para la media?}
+Principalmente cuando se quiere realizar una aseveración de una hipótesis, en la cual se calculan puntos extremos que delimitan las probabilidades de que un \emph{estadístico de prueba} se encuentre dentro de la región que representa la afirmación positiva de la hipótesis inicial.
+
+\subsection{¿Cómo se debe de llevar a cabo una prueba de una cola para una media poblacional en el caso en que $\alpha$ sea conocida?}
+Primeramente, se debe plantear una hipótesis que afirme algo con base en la media poblacional, los siguientes pasos a seguir son:
+
+\begin{enumerate}
+    \item Expresar la hipótesis de manera formal (matemática) y complementarla con la expresión de la \emph{hipótesis nula} y/o la \emph{alternativa}.
+    \item Calcular $\overline{x}$, $\mu_{\overline{x}}$, y utilizar $n$ para obtener el estadístico de prueba $z$.
+    \item Con base en el estadístico de prueba $z$ tomar una decición utilizando un método (valor P, tradicional, etc.).
+\end{enumerate}
+
+\section{Ejercicios}
+\subsection{5 Ejercicios de \emph{estimación de intervalo de confianza}}
+
+\subsubsection{Problema 1}
+Una muestra aleatoria de 100 hogares de una ciudad indica que la media de los ingresos mensuales es de \$500. Encuentre un intervalo de confianza del 95\% para la media poblacional $\mu$ de los ingresos de todos los hogares de esa ciudad. Suponga $\sigma=100$
+
+\emph{Solución:}
+
+\begin{itemize}
+    \item \emph{\textbf{Si} es una muestra aleatoria simple.}
+    \item \emph{\textbf{Si} se conoce el valor de $\sigma$.}
+    \item \emph{La muestra es mayor a 30 ($100>30$).}
+\end{itemize}
+
+\emph{Teniendo:}
+
+$\overline{x}=500$
+
+$z=1.96$
+
+$\sigma=100$
+
+$n=100$
+
+\emph{El invervalo de confianza al 95\% se define por:}
+
+$[\overline{x}-z*\frac{\sigma}{\sqrt{n}}, \overline{x}+z*\frac{\sigma}{\sqrt{n}}]$
+
+\emph{Sustituyendo:}
+
+$[500-1.96*\frac{100}{\sqrt{100}}, 500+1.96*\frac{100}{\sqrt{100}}]=\textbf{[480.4;519.6]}$
+
+\emph{Por lo tanto:}
+
+\emph{La media poblacional $\mu$ de los ingresos mensuales en los hogares de la ciudad se encuentra entre \$480.4 y \$519.6 con una certeza del 95\%.}
+
+\subsubsection{Problema 2}
+El tiempo diario que los adultos de una determinada ciudad dedican a actividades deportivas, expresado en minutos, se puede aproximar por una variable aleatoria con distribución normal de desviación estándar $\sigma=20min$. Para una muestra aleatoria simple de 250 habitantes de esa ciudad se ha obtenido un tiempo medio de dedicación a actividades deportivas de 90 minutos diarios. Calcular un intervalo de confianza al 90\% para $\mu$.
+
+\emph{Solución:}
+
+\begin{itemize}
+    \item \emph{\textbf{Si} es una muestra aleatoria simple.}
+    \item \emph{\textbf{Si} se conoce el valor de $\sigma$.}
+    \item \emph{La muestra es mayor a 30 ($200>30$).}
+\end{itemize}
+
+\emph{Teniendo:}
+
+$\overline{x}=90$
+
+$z=1.645$
+
+$\sigma=20$
+
+$n=250$
+
+\emph{El intervalo de confianza al 90\% se define por:}
+
+$[\overline{x}-z*\frac{\sigma}{\sqrt{n}}, \overline{x}+z*\frac{\sigma}{\sqrt{n}}]$
+
+\emph{Sustituyendo:}
+
+$[90-1.645*\frac{20}{\sqrt{250}}, 90+1.645*\frac{20}{\sqrt{250}}]=\textbf{[87.92;92.08]}$
+
+\emph{Por lo tanto:}
+
+\emph{La media poblacional $\mu$ de la cantidad de minutos que las personas invierten tiempo en actividades deportivas se encuentra entre 87.92 y 92.08 minutos con una certeza del 90\%.}
+
+\subsubsection{Problema 3}
+Una muestra aleatoria simple de 25 estudiantes responden a una prueba de inteligencia espacial, obteniendo una media de 100 puntos. Se sabe que la variable inteligencia espacial de todos los alumnos es una variable normal con una desviación de 10, pero se desconoce la media. ¿Entre qué límites se hallará la verdadera inteligencia espacial media de todos los alumnos, con un nivel de confianza de 0.99?
+
+\emph{Solución:}
+
+\begin{itemize}
+    \item \emph{\textbf{Si} es una muestra aleatoria simple.}
+    \item \emph{\textbf{Si} se conoce el valor de $\sigma$.}
+    \item \emph{\textbf{Si} se tiene una distribución normal.}
+\end{itemize}
+
+\emph{Teniendo:}
+
+$\overline{x}=100$
+
+$z=2.575$
+
+$\sigma=10$
+
+$n=25$
+
+\emph{El intervalo de confianza al 99\% se define por:}
+
+$[\overline{x}-z*\frac{\sigma}{\sqrt{n}}, \overline{x}+z*\frac{\sigma}{\sqrt{n}}]$
+
+\emph{Sustituyendo:}
+
+$[100-2.575*\frac{10}{\sqrt{25}}, 100+2.575*\frac{10}{\sqrt{25}}]=\textbf{[96.85;105.15]}$
+
+\emph{Por lo tanto:}
+
+\emph{La media poblacional $\mu$ de los puntos en inteligencia espacial de la población de alumnos se encuentra entre 96.85 y 105.15 puntos con una certeza del 99\%.}
+
+\subsubsection{Problema 4}
+Se ha obtenido una muestra de 25 alumnos de una Facultad para estimar la calificación media de los expedientes de los alumnos en la Facultad. Se sabe por otros cursos que la desviación de las puntuaciones en dicha Facultad es de 2.01 puntos y la media muestral fue de 4.9. Calcular un intervalo de confianza para la media poblacional al 90\%.
+
+\emph{Solución:}
+
+\begin{itemize}
+    \item \emph{\textbf{Si} es una muestra aleatoria simple.}
+    \item \emph{\textbf{Si} se conoce el valor de $\sigma$.}
+    \item \emph{\textbf{Si} se tiene una distribución normal.}
+\end{itemize}
+
+\emph{Teniendo:}
+
+$\overline{x}=4.9$
+
+$z=1.64$
+
+$\sigma=2.01$
+
+$n=25$
+
+\emph{El intervalo de confianza al 90\% se define por:}
+
+$[\overline{x}-z*\frac{\sigma}{\sqrt{n}}, \overline{x}+z*\frac{\sigma}{\sqrt{n}}]$
+
+\emph{Sustituyendo:}
+
+$[4.9-1.64*\frac{2.01}{\sqrt{25}}, 4.9+1.64*\frac{2.01}{\sqrt{25}}]=\textbf{[4.9;5.56]}$
+
+\emph{Por lo tanto:}
+
+\emph{La media poblacional $\mu$ de la calificación media de los alumnos en la facultad está entre 4.9 y 5.56 puntos con una certeza del 90\%}
+
+\subsubsection{Problema 5}
+Se ha obtenido una muestra de 15 vendedores de una editorial para estimar el valor medio de las ventas por trabajador en la empresa. La media y varianza de la muestra (en miles de euros) son 5 y 2, respectivamente. Calcular el intervalo de confianza para la venta media por trabajador en la editorial al 90\%.
+
+\emph{Solución:}
+
+\begin{itemize}
+    \item \emph{\textbf{Si} es una muestra aleatoria simple.}
+    \item \emph{\textbf{No} se conoce el valor de $\sigma$.}
+    \item \emph{\textbf{Si} se tiene una distribución normal.}
+\end{itemize}
+
+\emph{Teniendo:}
+
+$\overline{x}=5$
+
+$s^2=\frac{n}{n-1}V(x)=\frac{15}{14}2=2.143$
+
+$s=\sqrt{2.143}=1.464$
+
+$n=15$
+
+\emph{El intervalo de confianza el 90\% se define por:}
+
+$[\overline{x}-t_{\alpha/2}*\frac{s}{\sqrt{n}}, \overline{x}+t_{\alpha/2}*\frac{s}{\sqrt{n}}]$
+
+\emph{Sustituyendo:}
+
+$[5-1.761*\frac{1.464}{\sqrt{15}}, 5+1.761*\frac{1.464}{\sqrt{15}}]=\textbf{[4.334;5.666]}$
+
+\emph{Por lo tanto:}
+
+\emph{La media poblacional $\mu$ de las ventas promedio de cada trabajador de la editorial está entre 4.334 y 5.666 con una certeza del 90\%.}
+
+\subsection{5 Ejercicios de \emph{prueba de hipótesis de una sola cola para la media}}
+
+\subsubsection{Problema 1}
+
+La cadena de restaurantes McBurger afirma que el tiempo de espera de los clientes es de 3 minutos con una desviación estándar de 1 minuto. El departamento de control de calidad halló en una muestra de 50 clientes en Warren Road McBurger que el tiempo medio de espera era de 2.75 minutos. Con el nivel de significancia de 0.05. ¿Puede concluir que el tiempo medio de espera sea menor a 3 minutos?
+
+\emph{Solución:}
+
+\emph{Teniendo:}
+
+$\mu=3min$
+
+$\sigma=1min$
+
+$n=50$
+
+$\overline{x}=2.75$
+
+$\alpha=0.05$ \emph{(significancia)}
+
+$z_{critico}=0.5-0.05=0.45\to -1.65$
+
+$z_{calculado}=\frac{2.75-3}{1/\sqrt{50}}=-1.78$
+
+$prueba=cola_{izquierda}$
+
+\emph{Hipótesis:}
+
+$H_0:\mu\geq 3min$, $H_1:\mu<3min$
+
+\emph{Decisión:}
+
+\emph{Rechazar $H_0$ si $z_{calculado}<z_{critico}$}
+
+\textbf{$-1.78<-1.65$}, por lo tanto:
+
+\emph{La diferencia entre la media muestral y la media poblacional sobre el tiemo de espera es significativa, hay evidencia suficiente para rechazar $H_0$ y aceptar que el tiempo de espera por cliente es menor a 3 minutos.}
+
+\subsubsection{Problema 2}
+Se selecciona una muestra de 64 observaciones de una población normal. La media de la muestra es 215, y la desviación estándar de la población, 15. Lleve a cabo la pureba de hipótesis, utilice el nivel de significancia 0.03. $H_0:\mu\geq 220$, $H_1:\mu<220$
+
+\emph{Solución:}
+
+\emph{Teniendo:}
+
+$\mu=220$
+
+$\sigma=15$
+
+$n=64$
+
+$\overline{x}=215$
+
+$\alpha=0.03$
+
+$z_{critico}=0.5-0.03=0.47\to -1.89$
+
+$z_{calculado}=\frac{215-220}{15/\sqrt{64}}=-2.66$
+
+$prueba=cola_{izquierda}$
+
+\emph{Hipótesis:}
+
+$H_0:\mu\geq 220$
+
+$H_1:\mu<220$
+
+\emph{Decisión:}
+
+\emph{Rechazar $H_0$ si $z_{calculado}<z_{critico}$}
+
+$-2.66<-1.89$
+
+\emph{La media poblacional es menor de 220.}
+
+\subsubsection{Problema 3}
+Se selecciona una muestra de 36 observaciones de una población normal. La media muestral es de 12, y el tamaño de la muestra, 36. La desviación estándar de la población es 3. Utilice el nivel de significancia 0.02. $H_0:\mu\leq 10$, $H_1:\mu>10$
+
+\emph{Solución:}
+
+\emph{Teniendo:}
+
+$\mu=10$
+
+$\sigma=3$
+
+$n=36$
+
+$\overline{x}=12$
+
+$\alpha=0.02$
+
+$z_{critico}=0.5+0.02=0.52\to 2.06$
+
+$z_{calculado}=\frac{12-10}{3/\sqrt{36}}=4$
+
+$prueba=cola_{derecha}$
+
+\emph{Hipótesis:}
+
+$H_0:\mu\leq 10$
+
+$H_1:\mu>10$
+
+\emph{Decisión:}
+
+\emph{Rechazar $H_0$ si $z_{calculado}>z_{critico}$}
+
+$4>2.06$
+
+\emph{Existe evidencia significativa de que la media tiene un valor mayor a 10.}
+
+\subsubsection{Problema 4}
+En el momento en que fue contratada como mesera en el Restaurante el Asado, a Bety le dijeron: "Puedes ganar en promedio más de \$400 al día en propinas". Suponga que la desviación estándar de la distribución de población es de \$60. Los primeros 35 días de trabajar en el restaurante, la suma media de sus propinas fue de \$420. Con el nivel de significancia de 0.01, ¿la señorita Bety puede concluir que gana un promedio de más de \$400 en propinas?
+
+\emph{Solución:}
+
+\emph{Teniendo:}
+
+$\mu=400$
+
+$\sigma=60$
+
+$n=35$
+
+$\overline{x}=420$
+
+$\alpha=0.01$
+
+$z_{critico}=0.5-0.01=0.49\to 2.33$
+
+$z_{calculado}=\frac{420-400}{60/\sqrt{35}}=1.97$
+
+$prueba=cola_{derecha}$
+
+\emph{Hipótesis:}
+
+$H_0:\mu\leq 400$
+
+$H_1:\mu>400$
+
+\emph{Decisión:}
+
+\emph{Rechazar $H_0$ si $z_{calculado}>z_{critico}$}
+
+$1.97>2.33$\emph{, se acepta hipótesis nula}
+
+\emph{Por lo tanto, Bety, en promedio, no gana la misma cantidad de propinas diarias que la media poblacional.}
+
+\subsubsection{Problema 5}
+Una embotelladora de refrescos dice que sus latas de refresco tienen una cantidad de refresco de media 33cl y desviación de 2cl. Se han tomado 36 latas de refresco y se ha calculado que el contenido medio por lata es de 32.5cl. ¿Es cierta la afirmación del fabricante con un nivel de significancia del 1%?
+
+\emph{Solución:}
+
+\emph{Teniendo:}
+
+$\mu=33$
+
+$\sigma=2$
+
+$n=36$
+
+$\overline{x}=32.5$
+
+$\alpha=0.01$
+
+$z_{critico}=0.5-0.01=0.49\to -2.33$
+
+$z_{calculado}=\frac{32.5-33}{2/\sqrt{36}}=-1.5$
+
+$prueba=cola_{izquierda}$
+
+\emph{Hipótesis:}
+
+$H_0:\mu\geq 33$
+
+$H_1:\mu<33$
+
+\emph{Decisión:}
+
+\emph{Rechazar $H_0$ si $z_{calculado}<z_{critico}$}
+
+$-1.5>-2.33$\emph{, se acepta hipótesis nula}
+
+\emph{Por lo tanto, la cantidad media de refresco en las botellas es menor a lo que la empresa dice con una certeza del 1\%.}
+
+\subsection{5 Ejercicios de \emph{prueba de hipótesis de dos colas para la media}}
+
+\subsubsection{Problema 1}
+Un fabricante de puertas nos asegura que para el pedido que le encargamos, reguló la máquina cortadora para que la anchura de las puertas fuese de 83cm con una desviación de 0.2cm pero las 50 puertas que nos han llegado tienen una anchura media de 83.1cm y muchas de ellas no encajan en el marco. ¿Se puede demostrar la hipótesis de que la cortadora generó una medida distinta a la acordada, con un nivel de significancia del 1\%?
+
+\emph{Solución:}
+
+\emph{Teniendo:}
+
+$\mu=83$
+
+$\sigma=0.2$
+
+$n=50$
+
+$\overline{x}=83.1$
+
+$\alpha=0.01$
+
+$z_{critico}=0.5-0.01=0.49\to\pm 2.33$
+
+$z_{calculado}=\frac{83.1-83}{0.2/\sqrt{50}}=3.54$
+
+\emph{Hipótesis:}
+
+$H_0:\mu=83$
+
+$H_1:\mu\neq 83$
+
+\emph{Decisión:}
+
+\emph{Rechazar $H_0$ si $z_{calculado}<-z_{critico}$ o $z_{calculado}>+z_{critico}$}
+
+$3.54>2.33$\emph{, se rechaza hipótesis nula}
+
+\emph{Por lo tanto, la afirmación del fabricante de que sus puertas tienen como media poblacional una anchura de 83cm es falsa.}
+
+\subsubsection{Problema 2}
+Una compañía fabrica y arma escritorios y otros muebles para oficina en diferentes plantas. La producción semanal del escritorio modelo A, tiene una distribución normal, con una media de 200 y una desviación estándar de 16. Hace poco, con motivo de la expansión del mercado, se introdujeron nuevos métodos de producción y se contrató a más empleados. El presidente de fabricación pretende investigar si hubo algún cambio en la producción semanal del escritorio modelo A. En otras palabras, ¿la cantidad media de escritorios que se produjeron en la planta es diferentes de 200 escritorios semanales con un nivel de significancia de 0.01? La cantidad media de escritorios que se produjeron el año pasado es de 203.5 (50 semanas). La desviación estándar de la población es de 16 escritorios semanales.
+
+\emph{Solución:}
+
+\emph{Teniendo:}
+
+$\mu=200$
+
+$\sigma=16$
+
+$n=50$
+
+$\overline{x}=203.5$
+
+$\alpha=0.01$
+
+$z_{critico}=0.5-\frac{0.01}{2}=0.495\to\pm 2.58$
+
+$z_{calculado}=\frac{203.5-200}{16/\sqrt{50}}=1.55$
+
+\emph{Hipótesis:}
+
+$H_0:\mu=200$
+
+$H_1:\mu\neq 200$
+
+\emph{Decisión:}
+
+\emph{Rechazar $H_0$ si $z_{calculado}<-z_{critico}$ o $z_{calculado}>+z_{critico}$}
+
+$1.55<2.58$\emph{, no se rechaza hipótesis nula}
+
+\emph{Por lo tanto, la fábrica mantiene su nivel de producción promedio en 200 muebles por semana.}
+
+\subsubsection{Problema 3}
+Heinz, un fabricante de catsup, utiliza una máquina para vaciar 16 onzas de su salsa en botellas. A partir de su experiencia de varios años con la máquina despachadora, la empresa sabe que la cantidad del producto en cada botella tiene una distribución normal con una media de 16 onzas y una desviación de 0.15 onzas. Una muestra de 50 botellas llenadas durante la hora pasada reveló que la cantidad media por botella era de 16.017 onzas, ¿Sugiere la evidencia que la cantidad media despachada es diferente de 16 onzas? Utilice un nivel de significancia de 0.05.
+
+\emph{Solución:}
+
+\emph{Teniendo:}
+
+$\mu=16$
+
+$\sigma=0.15$
+
+$n=50$
+
+$\overline{x}=16.017$
+
+$\alpha=0.05$
+
+$z_{critico}=0.5-\frac{0.05}{2}=0.475\to\pm 1.96$
+
+$z_{calculado}=\frac{16.017-16}{0.15/\sqrt{50}}=0.801$
+
+\emph{Hipótesis:}
+
+$H_0:\mu=16$
+
+$H_1:\mu\neq 16$
+
+\emph{Decisión:}
+
+\emph{Rechazar $H_0$ si $z_{calculado}<-z_{critico}$ o $z_{calculado}>+z_{critico}$}
+
+$0.801<1.96$\emph{, no se rechaza hipótesis nula}
+
+\emph{Por lo tanto, la media de onzas en las botellas de la empresa mantiene un margen aceptable.}
+
+\subsubsection{Problema 4}
+El fabricante de neumáticos radiales con cinturón de acero X-15 para camiones, señala que el millaje medio que cada uno recorre, antes de que se desgasten las cuerdas, es de 60000 millas. La desviación del millaje es de 5000 millas. La Crosset Truck Company compró 48 neumáticos y comprobó que el millaje medio para sus camiones es de 59500 millas. ¿La experiencia de crosset es diferente de lo oque afirma el fabricante en el nivel de significancia de 0.05?
+
+\emph{Solución:}
+
+\emph{Teniendo:}
+
+$\mu=60000$
+
+$\sigma=5000$
+
+$n=48$
+
+$\overline{x}=59500$
+
+$\alpha=0.05$
+
+$z_{critico}=0.5-\frac{0.05}{2}=0.475\to\pm 1.96$
+
+$z_{calculado}=\frac{59500-60000}{5000/\sqrt{48}}=-0.69$
+
+\emph{Hipótesis:}
+
+$H_0:\mu=60000$
+
+$H_1:\mu\neq 60000$
+
+\emph{Decisión:}
+
+\emph{Rechazar $H_0$ si $z_{calculado}<-z_{critico}$ o $z_{calculado}>+z_{critico}$}
+
+$-0.69>-1.96$\emph{, no se rechaza hipótesis nula}
+
+\emph{Por lo tanto, la media del millaje que promete el fabricante es verdadero debido a la evidencia con una significancia de 0.05.}
+
+\subsubsection{Problema 5}
+La propaganda de cierta bebida dice que tiene 50 calorías por botella, se toma al azar una muestra de 36 botellas y se determina que el promedio de calorías por botella es de 49.3. Si los datos se encuentran distribuidos normalmente y si la desviación estándar de la población es de 3. Emplee un nivel de significancia de 0.05 para probar que la empresa cumple lo que dice.
+
+\emph{Solución:}
+
+\emph{Teniendo:}
+
+$\mu=50$
+
+$\sigma=3$
+
+$n=36$
+
+$\overline{x}=49.3$
+
+$\alpha=0.05$
+
+$z_{critico}=0.5-\frac{0.05}{2}=0.475\to\pm 1.96$
+
+$z_{calculado}=\frac{49.3-50}{3/\sqrt{36}}=-1.4$
+
+\emph{Hipótesis:}
+
+$H_0:\mu=50$
+
+$H_1:\mu\neq 50$
+
+\emph{Decisión:}
+
+\emph{Rechazar $H_0$ si $z_{calculado}<-z_{critico}$ o $z_{calculado}>+z_{critico}$}
+
+$-1.4>-1.96$\emph{, no se rechaza hipótesis nula}
+
+\emph{Por lo tanto, la media de calorías por botella que la empresa afirma que tienen es verdadera por un nivel de significancia de 0.05.}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+\nocite{*}
+\end{document}

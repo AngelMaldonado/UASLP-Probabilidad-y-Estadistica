@@ -1,0 +1,1 @@
+{"rule":"MORFOLOGIK_RULE_ES","sentence":"^\\Q¿Cómo se determina e interpreta la media poblacional con \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q conocida?.\\E$"}
